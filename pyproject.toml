@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "robust-pycycle-engines"
+version = "0.1.0"
+description = "Physics-based pyCycle initial guesses, cycle models and engine decks for turbofan, turboshaft, and fan engine models."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy<2.4",  # pyCycle 4.4 fails on NumPy 2.4 and later
+    "scipy",
+    "openmdao>=3.38.0",
+    "om-pycycle>=4.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "testflo",
+]
+
+[project.urls]
+Paper = "https://doi.org/10.2514/6.2026-4499"
+
+# Ruff configuration matches FINCH
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.ruff.lint]
+# Enable isort and pydocstyle
+extend-select = ["I", "D"]
+
+extend-ignore = [
+    "D100",  # Missing docstring in public module
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+    "D104",  # Missing docstring in public package
+    "D105",  # Missing docstring in magic method
+    "D106",  # Missing docstring in public nested class
+    "D204",  # 1 blank line required after class docstring
+    "D205",  # 1 blank line required between summary and description
+    "D401",  # First line should be in imperative mood
+    "D404",  # Docstring should not start with "This"
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["robust_pycycle_engines"]
+split-on-trailing-comma = false
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.hatch.build.targets.wheel]
+packages = ["robust_pycycle_engines"]

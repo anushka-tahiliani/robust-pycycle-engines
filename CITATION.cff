@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Robust pyCycle engines"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/anushka-tahiliani/robust-pycycle-engines"
+authors:
+  - family-names: Tahiliani
+    given-names: Anushka
+preferred-citation:
+  type: conference-paper
+  title: "Robust Approach to Engine Cycle Modeling to Enable Multidisciplinary Optimization of Advanced Aircraft"
+  authors:
+    - family-names: Tahiliani
+      given-names: Anushka
+    - family-names: Hajdik
+      given-names: Hannah
+    - family-names: Lamkin
+      given-names: Andrew
+    - family-names: Folk
+      given-names: Masha
+    - family-names: Uranga
+      given-names: Alejandra
+  conference:
+    name: "AIAA AVIATION 2026 Forum"
+  publisher:
+    name: "American Institute of Aeronautics and Astronautics"
+  year: 2026
+  doi: "10.2514/6.2026-4499"
